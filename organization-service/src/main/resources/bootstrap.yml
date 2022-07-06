@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: organization-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8071
+#      allowOverride: true
+#      overrideNone: true
+#      overrideSystemProperties: false
+
+server:
+  port: 8081
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"

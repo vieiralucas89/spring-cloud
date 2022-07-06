@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /api
+  feign:
+    hystrix:
+      enabled: false
+    okhttp:
+      enabled: true
+  licensing:
+    client:
+      url:

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: licensing-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8071
+#      allowOverride: true
+#      overrideNone: true
+#      overrideSystemProperties: false
+
+server:
+  port: 8080
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
