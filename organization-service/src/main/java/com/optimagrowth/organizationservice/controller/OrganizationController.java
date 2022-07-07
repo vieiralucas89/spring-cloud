@@ -1,7 +1,6 @@
 package com.optimagrowth.organizationservice.controller;
 
 import com.optimagrowth.organizationservice.feign.LicensingClient;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,7 @@ public class OrganizationController {
 
     @GetMapping
     public String getOrganization() {
-        return organizationFeignClient.greeting();
+        return "organizationFeignClient.greeting()";
     }
 
 
