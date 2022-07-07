@@ -1,0 +1,13 @@
+server:
+  port: 8072
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+
+

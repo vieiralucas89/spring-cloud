@@ -1,0 +1,12 @@
+Configuring the Spring Cloud Gateway
+ - Create a module
+ - Set dependencies in pom
+   - Eureka Discovery Client
+   - Config Client
+   - Actuator
+   - Gateway
+ - Set config bootstrap.yml
+  - app-name
+  - set uri config
+ - Eureka Config
+   -

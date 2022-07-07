@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
+        <module name="gatewayserver" />
         <module name="licensing-service" />
         <module name="config-server" />
         <module name="organization-service" />
@@ -16,8 +17,10 @@
     <bytecodeTargetLevel>
       <module name="config-server" target="17" />
       <module name="eurekaserver" target="17" />
+      <module name="gatewayserver" target="17" />
       <module name="licensing-service" target="17" />
       <module name="organization-service" target="17" />
+      <module name="ostock-parent-pom" target="1.8" />
       <module name="spring-cloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -25,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-server" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="gatewayserver" options="-parameters" />
       <module name="licensing-service" options="-parameters" />
       <module name="organization-service" options="-parameters" />
     </option>

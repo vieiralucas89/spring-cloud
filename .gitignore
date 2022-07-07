@@ -12,6 +12,9 @@
 
 # Package Files #
 *.jar
+
+*.ide
+.ide
 *.war
 *.nar
 *.ear
@@ -23,3 +26,5 @@
 hs_err_pid*
 
 
+/.idea/
+/.idea/

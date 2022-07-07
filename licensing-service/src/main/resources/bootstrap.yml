@@ -6,9 +6,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:8071
-#      allowOverride: true
-#      overrideNone: true
-#      overrideSystemProperties: false
+
 
 server:
   port: 8080
@@ -18,11 +16,11 @@ server:
         exposure:
           include: "*"
 
-logging:
-  level:
-    com.netflix: WARN
-    org.springframework.web: WARN
-    com.optimagrowth: DEBUG
+#logging:
+#  level:
+#    com.netflix: WARN
+#    org.springframework.web: WARN
+#    com.optimagrowth: DEBUG
 
 resilience4j.circuitbreaker:
   instances:
