@@ -76,7 +76,6 @@ public class LicenseService {
     @Retry(name = "retryLicenseService", fallbackMethod = "buildFallbackLicenseList")
     @Bulkhead(name = "bulkheadLicenseService", type = Type.THREADPOOL, fallbackMethod = "buildFallbackLicenseList")
     public List<License> getLicensesByOrganization(String organizationId) throws TimeoutException {
-
         randomlyRunLong();
         return licenseRepository.findByOrganizationId(organizationId);
     }

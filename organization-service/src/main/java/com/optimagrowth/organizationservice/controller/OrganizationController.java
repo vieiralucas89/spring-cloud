@@ -15,7 +15,7 @@ public class OrganizationController {
 
     @GetMapping
     public String getOrganization() {
-        return "organizationFeignClient.greeting()";
+        return organizationFeignClient.greeting();
     }
 
 
