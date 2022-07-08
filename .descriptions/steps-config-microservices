@@ -8,5 +8,4 @@ Configuring the Spring Cloud Gateway
  - Set config bootstrap.yml
   - app-name
   - set uri config
- - Eureka Config
-   -
+ - gateway-server.yml configs

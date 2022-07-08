@@ -16,6 +16,7 @@ server:
         exposure:
           include: "*"
 
+
 #logging:
 #  level:
 #    com.netflix: WARN
