@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.TimeoutException;
 
 @RestController
-@RequestMapping(value = "v1/licencing")
+@RequestMapping(value = "/licensing")
 public class LicenseController {
 
     @Autowired

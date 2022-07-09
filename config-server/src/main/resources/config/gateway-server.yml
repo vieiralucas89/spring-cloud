@@ -3,6 +3,7 @@ server:
 
 eureka:
   instance:
+    prefer-ip-address: true
     leaseRenewalIntervalInSeconds: 5
   client:
     healthcheck:
@@ -15,21 +16,24 @@ spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: organization-service
           uri: lb://organization-service
           predicates:
-            - Path=/organization/**
-          filters:
-            - RewritePath=/organization/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - Path=/organizations/**
+#          filters:
+#            - RewritePath=/organizations/(?<path>.*),/$\{path}
+#            - RemoveRequestHeader= Cookie,Set-Cookie
         - id: licensing-service
           uri: lb://licensing-service
           predicates:
-            - Path=/license/**
-          filters:
-            - RewritePath=/license/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - Path=/licensing/**
+#          filters:
+#            - RewritePath=/licensing/(?<path>.*),/$\{path}
+#            - RemoveRequestHeader= Cookie,Set-Cookie
 
 management:
   endpoints:

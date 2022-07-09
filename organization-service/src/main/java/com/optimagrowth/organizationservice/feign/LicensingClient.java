@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * Aqui estou criando uma interface que vai fazer a ligação com o endpoint licensing-service
  */
 
-@FeignClient(value = "licensing-service", url = "http://localhost:8082/v1/licencing", configuration = ClientConfiguration.class)
+@FeignClient(value = "licensing-service", url = "http://localhost:8082/licensing", configuration = ClientConfiguration.class)
 public interface LicensingClient {
 
     @GetMapping

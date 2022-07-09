@@ -12,7 +12,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
 
-@Order(1)
+@Order(-1)
 @Component
 public class TrackingFilter implements GlobalFilter {
 

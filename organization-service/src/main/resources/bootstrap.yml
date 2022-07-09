@@ -9,9 +9,11 @@ spring:
 #      allowOverride: true
 #      overrideNone: true
 #      overrideSystemProperties: false
+
 microservice:
   licensing:
     url: http://localhost:8082
+
 server:
   port: 8083
   management:
