@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class LicensingServiceApplication {
-
+    //video
     public static void main(String[] args) {
 
         SpringApplication.run(LicensingServiceApplication.class, args);

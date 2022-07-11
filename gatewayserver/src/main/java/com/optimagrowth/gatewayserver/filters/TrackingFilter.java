@@ -9,10 +9,9 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-
 import reactor.core.publisher.Mono;
 
-@Order(-1)
+@Order(1)
 @Component
 public class TrackingFilter implements GlobalFilter {
 
@@ -23,9 +22,7 @@ public class TrackingFilter implements GlobalFilter {
 
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-
 		HttpHeaders requestHeaders = exchange.getRequest().getHeaders();
-
 		if (isCorrelationIdPresent(requestHeaders)) {
 			logger.debug("tmx-correlation-id found in tracking filter: {}. ", 
 					filterUtils.getCorrelationId(requestHeaders));

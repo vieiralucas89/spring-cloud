@@ -3,40 +3,44 @@ server:
 
 eureka:
   instance:
-    prefer-ip-address: true
-    leaseRenewalIntervalInSeconds: 5
+    preferIpAddress: true
   client:
-    healthcheck:
-      enabled: true
     registerWithEureka: true
     fetchRegistry: true
 
 
 spring:
+  boot:
+    admin:
+      context-path: /admin
+  zipkin:
+    baseUrl: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
         - id: organization-service
           uri: lb://organization-service
           predicates:
             - Path=/organizations/**
-#          filters:
-#            - RewritePath=/organizations/(?<path>.*),/$\{path}
-#            - RemoveRequestHeader= Cookie,Set-Cookie
+          filters:
+            - RewritePath=/organization/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
         - id: licensing-service
           uri: lb://licensing-service
           predicates:
-            - Path=/licensing/**
-#          filters:
-#            - RewritePath=/licensing/(?<path>.*),/$\{path}
-#            - RemoveRequestHeader= Cookie,Set-Cookie
+            - Path=/license/**
+          filters:
+            - RewritePath=/licensing/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+

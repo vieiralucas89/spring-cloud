@@ -1,0 +1,21 @@
+Configuring ELK
+1 - The clients and gateway services communicate via TCP with Logstash to send the log data.
+2 - Logstash filters, transforms, and passes the data to a central data store (in this case,
+    Elasticsearch).
+3 - Elasticsearch indexes and stores the data in a searchable format so it can be queried
+    later by Kibana.
+4 - Once the data is stored, Kibana uses the index patterns from Elasticsearch to retrieve
+    the data.
+
+1 - Configuring Logback in our service
+    1.1 - Add the logstash-logback-encoder dependency in the pom.xml of our services
+        <dependency>
+        <groupId>net.logstash.logback</groupId>
+        <artifactId>logstash-logback-encoder</artifactId>
+        <version>6.3</version>
+        </dependency>
+    1.2 - Create the Logstash TCP appender in a Logback configuration file
+          - Class that will be use
+             - LoggingEventCompositeJsonEncoder.class
+          - add logback-spring.xml
+

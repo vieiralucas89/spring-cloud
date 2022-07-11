@@ -50,9 +50,6 @@ java -Dspring.cloud.config.uri=http://localhost:8071 \
 -Dspring.profiles.active=dev \
 -jar target/licensing-service-0.0.1-SNAPSHOT.jar
 
-COMMIT A CONTAINER
-    docker ps
-    docker commit <ID-IMAGEM>  svendowideit/testimage:version3
 
 #DOCKER
 
@@ -63,5 +60,26 @@ COMMIT A CONTAINER
 #DOCKER COMPOSE COMMANDS
     docker-compose up
 
+#PUSH IMAGE DOCKER
+   1 -COMMIT A CONTAINER
 
+        docker ps
+    1:latest
+    1 - rodar o build em todos os projetos
 
+        mvn clean package dockerfile:build
+        docker tag ostock/config-server:0.0.1-SNAPSHOT vieiralucas89/config-server
+
+        mvn clean package dockerfile:build
+        docker tag ostock/eurekaserver:0.0.1-SNAPSHOT vieiralucas89/eureka-server
+
+        mvn clean package dockerfile:build
+        docker tag ostock/gatewayserver:0.0.1-SNAPSHOT vieiralucas89/gatewayserver
+
+        docker tag ostock/gatewayserver:0.0.1-SNAPSHOT vieiralucas89/gatewayserver
+        docker tag ostock/gatewayserver:0.0.1-SNAPSHOT vieiralucas89/gatewayserver
+
+        docker commit <ID-IMAGEM>  svendowideit/testimage:version3
+        docker commit ostock/eurekaserver:0.0.1-SNAPSHOT vieiralucas89/microservices:version1
+
+        docker push ostock/eurekaserver vieiralucas89/eureka-server:latest
